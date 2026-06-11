@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, CheckCircle2, ChevronRight, User, Phone, Check } from 'lucide-react';
 
+// ----------------------------------------------------------------------------
+// [구글 시트 연동 설정]
+// 1단계에서 획득한 구글 앱스 스크립트 웹 앱 URL을 아래 따옴표 안에 넣어주세요.
+// 예시: "https://script.google.com/macros/s/AKfycbz.../exec"
+// URL을 비워둘 경우, 오류 없이 가상 신청 완료 화면으로 바로 넘어갑니다.
+// ----------------------------------------------------------------------------
+const GOOGLE_SHEETS_API_URL = "";
+
 export default function SignUp() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,10 +42,32 @@ export default function SignUp() {
     setFormData({ ...formData, cellGroup: group });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.cellGroup) return;
-    setStep(4);
+
+    if (GOOGLE_SHEETS_API_URL) {
+      setIsSubmitting(true);
+      try {
+        // text/plain 형식으로 전송하여 CORS Preflight (OPTIONS) 요청을 우회합니다.
+        await fetch(GOOGLE_SHEETS_API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain',
+          },
+          body: JSON.stringify(formData),
+        });
+        setStep(4);
+      } catch (error) {
+        console.error("구글 시트 전송 에러:", error);
+        alert("신청 데이터 전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      // API URL이 비어있을 때는 로컬에서 바로 성공 화면으로 전환 (개발/테스트용)
+      setStep(4);
+    }
   };
 
   const handleClose = () => {
@@ -126,6 +157,7 @@ export default function SignUp() {
                 <button 
                   onClick={handleClose}
                   className="p-2 text-slate-500 hover:text-brand-gold-dark hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
+                  disabled={isSubmitting}
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -258,6 +290,7 @@ export default function SignUp() {
                                   ? 'border-brand-gold bg-brand-gold/10 text-brand-gold-dark font-bold' 
                                   : 'border-slate-200 bg-white/70 hover:bg-slate-50 text-slate-700'
                               }`}
+                              disabled={isSubmitting}
                             >
                               <span className="text-sm">{group}</span>
                               {formData.cellGroup === group && <Check className="w-4 h-4 text-brand-gold-dark" />}
@@ -269,15 +302,26 @@ export default function SignUp() {
                         <button
                           onClick={handlePrev}
                           className="w-1/3 py-4 border border-slate-200 text-slate-700 bg-white/40 rounded-xl font-semibold hover:bg-slate-50 transition-colors cursor-pointer font-sans"
+                          disabled={isSubmitting}
                         >
                           이전
                         </button>
                         <button
                           onClick={handleSubmit}
-                          disabled={!formData.cellGroup}
-                          className="w-2/3 py-4 bg-brand-navy-deep text-brand-cream-light rounded-xl font-semibold hover:bg-slate-800 disabled:opacity-50 transition-colors cursor-pointer font-sans"
+                          disabled={!formData.cellGroup || isSubmitting}
+                          className="w-2/3 py-4 bg-brand-navy-deep text-brand-cream-light rounded-xl font-semibold hover:bg-slate-800 disabled:opacity-50 transition-colors cursor-pointer font-sans flex items-center justify-center space-x-2"
                         >
-                          신청 완료하기
+                          {isSubmitting ? (
+                            <span className="flex items-center gap-2">
+                              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              <span>신청 중...</span>
+                            </span>
+                          ) : (
+                            <span>신청 완료하기</span>
+                          )}
                         </button>
                       </div>
                     </motion.div>
