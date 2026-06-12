@@ -76,42 +76,12 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
   };
 
   return (
-    <>
-      {/* 4. Sign-Up Section with elegant curved top */}
-      <section className="relative bg-[#FEFAF0] text-brand-navy-deep py-36 px-6 md:px-12 overflow-hidden z-10">
-
-        {/* Curved SVG Transition at the top */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[99%]">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#FEFAF0] fill-current">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.35,26.78,174.68,48.25,243,62.7,321.39,56.44Z"></path>
-          </svg>
-        </div>
-
-
-        <motion.button
-          onClick={onSignUpClick}
-          className="px-10 py-5 bg-brand-navy-deep text-brand-cream-light font-sans font-semibold tracking-widest rounded-full shadow-2xl relative overflow-hidden group border border-brand-gold/30 hover:border-brand-gold cursor-pointer"
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          style={{ boxShadow: '0 10px 30px rgba(7, 13, 31, 0.15)' }}
-        >
-          {/* Hover overlay glow */}
-          <div className="absolute inset-0 bg-brand-gold opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-          <span className="flex items-center space-x-2 relative z-10">
-            <span>청년예배 신청하기</span>
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </span>
-        </motion.button>
-      </motion.div>
-    </section >
-
-      {/* Modal Popup overlay */ }
-      < AnimatePresence >
-      { isOpen && (
+    <AnimatePresence>
+      {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-
+          
           {/* Dark Backdrop with blur */}
-          <motion.div
+          <motion.div 
             className="absolute inset-0 bg-brand-navy-deep/40 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -133,7 +103,7 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
                 <h3 className="text-lg md:text-xl font-bold text-brand-navy-deep">청년예배 신청하기</h3>
                 <p className="text-[10px] text-slate-500 tracking-wider font-sans">Rise & Shine : 이끌림</p>
               </div>
-              <button
+              <button 
                 onClick={handleClose}
                 className="p-2 text-slate-500 hover:text-brand-gold-dark hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
                 disabled={isSubmitting}
@@ -145,8 +115,8 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
             {/* Progress bar */}
             {step <= 3 && (
               <div className="w-full bg-slate-200 h-[3px] flex">
-                <div
-                  className="bg-brand-gold-dark h-full transition-all duration-500"
+                <div 
+                  className="bg-brand-gold-dark h-full transition-all duration-500" 
                   style={{ width: `${(step / 3) * 100}%` }}
                 />
               </div>
@@ -155,7 +125,7 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
             {/* Modal Body */}
             <div className="p-8">
               <AnimatePresence mode="wait">
-
+                
                 {/* Step 1: Name */}
                 {step === 1 && (
                   <motion.div
@@ -340,9 +310,7 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
             </div>
           </motion.div>
         </div>
-      )
-}
-      </AnimatePresence >
-    </>
+      )}
+    </AnimatePresence>
   );
 }
