@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Users, Music, BookOpen, UserCheck, ArrowRight, ChevronDown } from 'lucide-react';
+import { Calendar, Users, Music, BookOpen, UserCheck, ArrowRight, ChevronDown, Sparkles } from 'lucide-react';
 
-export default function WorshipInfo() {
+export default function WorshipInfo({ onSignUpClick }) {
   const [expandedStep, setExpandedStep] = useState(null);
 
   const infoCards = [
@@ -15,8 +15,8 @@ export default function WorshipInfo() {
     {
       icon: <Users className="w-8 h-8 text-brand-gold-dark" />,
       title: "참석 대상",
-      content: "10대 후반 ~ 2030 청년",
-      sub: "새로운 시작과 만남을 원하는 분이라면 모두 환영해요"
+      content: "고등학생(고1) ~ 2030 청년",
+      sub: "고1부터 청년까지 누구나 환영해요"
     }
   ];
 
@@ -180,17 +180,32 @@ export default function WorshipInfo() {
           </div>
         </div>
 
-        {/* 3. Scripture Callout */}
-        <div className="border-t border-b border-brand-gold-dark/20 py-14 text-center space-y-6 max-w-4xl mx-auto">
-          <p className="font-sans text-lg md:text-2xl lg:text-3xl italic font-normal tracking-wide text-brand-gold-dark leading-relaxed px-4">
-            “Arise, shine; for your light has come,<br className="hidden md:inline" />
-            and the glory of the Lord rises upon you.”
-          </p>
-          <div className="space-y-1 font-sans">
-            <p className="text-sm md:text-base text-slate-700">
-              일어나라 빛을 발하라 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라
+        {/* 3. Scripture Callout & Bottom CTA Button */}
+        <div className="border-t border-b border-brand-gold-dark/20 py-14 text-center space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-6">
+            <p className="font-sans text-lg md:text-2xl lg:text-3xl italic font-normal tracking-wide text-brand-gold-dark leading-relaxed px-4">
+              “Arise, shine; for your light has come,<br className="hidden md:inline" />
+              and the glory of the Lord rises upon you.”
             </p>
-            <p className="text-xs tracking-widest text-brand-gold-dark font-bold">Isaiah 60:1 (이사야 60:1)</p>
+            <div className="space-y-1 font-sans">
+              <p className="text-sm md:text-base text-slate-700">
+                일어나라 빛을 발하라 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라
+              </p>
+              <p className="text-xs tracking-widest text-brand-gold-dark font-bold">Isaiah 60:1 (이사야 60:1)</p>
+            </div>
+          </div>
+
+          {/* Inline CTA Button added */}
+          <div className="pt-2 font-sans flex justify-center">
+            <motion.button
+              onClick={onSignUpClick}
+              className="px-8 py-3.5 bg-brand-navy-deep text-brand-cream-light font-bold text-sm tracking-widest rounded-full shadow-md hover:shadow-lg flex items-center space-x-2 cursor-pointer border border-brand-gold/10"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Sparkles className="w-4 h-4 text-brand-gold-light" />
+              <span>청년예배 신청하기</span>
+            </motion.button>
           </div>
         </div>
 

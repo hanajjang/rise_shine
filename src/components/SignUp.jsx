@@ -5,13 +5,11 @@ import { X, ArrowRight, CheckCircle2, ChevronRight, User, Phone, Check } from 'l
 // ----------------------------------------------------------------------------
 // [구글 시트 연동 설정]
 // 1단계에서 획득한 구글 앱스 스크립트 웹 앱 URL을 아래 따옴표 안에 넣어주세요.
-// 예시: "https://script.google.com/macros/s/AKfycbz.../exec"
 // URL을 비워둘 경우, 오류 없이 가상 신청 완료 화면으로 바로 넘어갑니다.
 // ----------------------------------------------------------------------------
 const GOOGLE_SHEETS_API_URL = "";
 
-export default function SignUp() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function SignUp({ isOpen, onClose, onSignUpClick }) {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -49,7 +47,6 @@ export default function SignUp() {
     if (GOOGLE_SHEETS_API_URL) {
       setIsSubmitting(true);
       try {
-        // text/plain 형식으로 전송하여 CORS Preflight (OPTIONS) 요청을 우회합니다.
         await fetch(GOOGLE_SHEETS_API_URL, {
           method: 'POST',
           headers: {
@@ -65,13 +62,12 @@ export default function SignUp() {
         setIsSubmitting(false);
       }
     } else {
-      // API URL이 비어있을 때는 로컬에서 바로 성공 화면으로 전환 (개발/테스트용)
       setStep(4);
     }
   };
 
   const handleClose = () => {
-    setIsOpen(false);
+    onClose();
     // Reset form states after close animation completes
     setTimeout(() => {
       setStep(1);
@@ -110,7 +106,7 @@ export default function SignUp() {
           </div>
 
           <motion.button
-            onClick={() => setIsOpen(true)}
+            onClick={onSignUpClick}
             className="px-10 py-5 bg-brand-navy-deep text-brand-cream-light font-sans font-semibold tracking-widest rounded-full shadow-2xl relative overflow-hidden group border border-brand-gold/30 hover:border-brand-gold cursor-pointer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}

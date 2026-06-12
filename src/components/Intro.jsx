@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
-export default function Intro() {
+export default function Intro({ onSignUpClick }) {
   const lines = [
     "지친 일상 속에서 잠시 숨을 고르고 싶을 때,",
     "따뜻한 환대와 편안한 교제가 여러분을 기다리고 있어요.",
@@ -31,7 +32,7 @@ export default function Intro() {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
         
-        {/* Left Column: Polaroid Collage (Gothic text captions) */}
+        {/* Left Column: Polaroid Collage */}
         <div className="lg:col-span-7 relative flex flex-col sm:flex-row items-center justify-center gap-8 min-h-[480px] py-10">
           
           {/* Polaroid 1: Wide Shot Altar (본당_전체) */}
@@ -123,6 +124,19 @@ export default function Intro() {
               {lines.map((line, idx) => (
                 <p key={idx}>{line}</p>
               ))}
+            </div>
+
+            {/* CTA Button added */}
+            <div className="pt-6 font-sans">
+              <motion.button
+                onClick={onSignUpClick}
+                className="px-6 py-3 border border-brand-gold-dark/40 hover:border-brand-gold bg-white hover:bg-slate-50 text-brand-gold-dark font-bold text-xs tracking-wider rounded-full flex items-center justify-center space-x-2 cursor-pointer shadow-sm transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span>청년예배 함께하기</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </motion.button>
             </div>
           </div>
           

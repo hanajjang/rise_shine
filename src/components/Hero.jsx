@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, useSpring } from 'framer-motion';
+import { ChevronRight } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ onSignUpClick }) {
   // Spring configurations for smooth mouse parallax movement
   const rotateXSpring = useSpring(0, { stiffness: 100, damping: 20 });
   const rotateYSpring = useSpring(0, { stiffness: 100, damping: 20 });
@@ -18,10 +19,10 @@ export default function Hero() {
     const yNormalized = (clientY / height) - 0.5;
 
     // Rotate and translate mapping for depth parallax
-    rotateXSpring.set(-yNormalized * 12); // Tilt vertically
-    rotateYSpring.set(xNormalized * 12);  // Tilt horizontally
-    translateXSpring.set(xNormalized * 15); // Slide slightly horizontally
-    translateYSpring.set(yNormalized * 15); // Slide slightly vertically
+    rotateXSpring.set(-yNormalized * 10); // Tilt vertically
+    rotateYSpring.set(xNormalized * 10);  // Tilt horizontally
+    translateXSpring.set(xNormalized * 12); // Slide slightly horizontally
+    translateYSpring.set(yNormalized * 12); // Slide slightly vertically
   };
 
   const handleMouseLeave = () => {
@@ -39,21 +40,21 @@ export default function Hero() {
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1200 }}
     >
-      {/* Background Image updated to '본당_전체' (KakaoTalk wide photo) */}
+      {/* Background Image: '본당_전체.jpeg' */}
       <motion.div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/사진/KakaoTalk_Photo_2026-06-10-14-56-05 010.jpeg')` }}
+        style={{ backgroundImage: `url('/사진/본당_전체.jpeg')` }}
         initial={{ scale: 1.12 }}
         animate={{ scale: 1.0 }}
         transition={{ duration: 15, ease: "easeOut" }}
       />
       
       {/* 30% Dark Overlay for contrast to protect typography */}
-      <div className="absolute inset-0 z-10 bg-brand-navy-deep/35 bg-gradient-to-b from-transparent via-brand-navy-deep/15 to-brand-navy-deep/65" />
+      <div className="absolute inset-0 z-10 bg-brand-navy-deep/35 bg-gradient-to-b from-transparent via-brand-navy-deep/15 to-brand-navy-deep/70" />
 
       {/* Hero Content (Centered Glassmorphism Card with Mouse Parallax) */}
       <motion.div 
-        className="relative z-20 text-center px-4 max-w-xl w-full"
+        className="relative z-20 text-center px-4 max-w-2xl w-full"
         style={{
           rotateX: rotateXSpring,
           rotateY: rotateYSpring,
@@ -62,25 +63,56 @@ export default function Hero() {
           transformStyle: "preserve-3d"
         }}
       >
-        {/* Bright clear glass card in Gothic typography */}
+        {/* Bright clear glass card in Gothic typography with expanded info */}
         <motion.div 
-          className="backdrop-blur-[12px] bg-white/60 border border-white/45 shadow-xl p-10 md:p-14 rounded-3xl"
+          className="backdrop-blur-[12px] bg-white/60 border border-white/45 shadow-2xl p-8 md:p-12 rounded-3xl space-y-6 md:space-y-8"
           style={{ transform: "translateZ(40px)" }}
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="space-y-6">
-            <span className="text-xs tracking-[0.25em] text-brand-gold-dark font-bold uppercase select-none font-sans">
-              Rise & Shine
-            </span>
-            <h1 className="font-sans text-4xl md:text-5xl font-extrabold text-brand-navy-deep tracking-wide leading-tight filter drop-shadow-sm">
-              Rise and Shine
-            </h1>
-            <p className="font-sans text-lg md:text-xl font-normal text-slate-700 tracking-wide">
-              이끌림, 함께 시작하는 예배
+          {/* Tag */}
+          <span className="text-xs tracking-[0.3em] text-brand-gold-dark font-extrabold uppercase select-none font-sans block">
+            Hana Youth Festival
+          </span>
+          
+          {/* Main Title - Enlarged */}
+          <h1 className="font-sans text-5xl md:text-7xl font-black text-brand-navy-deep tracking-tight leading-none filter drop-shadow-sm">
+            Rise and Shine
+          </h1>
+          
+          {/* Subtitle */}
+          <p className="font-sans text-base md:text-lg font-bold text-slate-700 tracking-wider">
+            이끌림, 함께 시작하는 예배
+          </p>
+
+          {/* 6월 28일 주일 오후 2시 Key Info Highlighted */}
+          <div className="bg-brand-gold/15 border border-brand-gold-dark/20 text-brand-gold-dark font-extrabold py-3 px-6 rounded-2xl inline-block text-base md:text-lg tracking-wide shadow-sm font-sans">
+            일시: 6월 28일 주일 오후 2시
+          </div>
+
+          {/* Scripture Callout (Isaiah 60:1) */}
+          <div className="border-t border-slate-300/40 pt-6 space-y-2 select-none font-sans">
+            <p className="text-xs md:text-sm italic font-medium text-slate-600 leading-relaxed max-w-md mx-auto">
+              “Arise, shine; for your light has come, and the glory of the Lord rises upon you.”
             </p>
-            <div className="w-16 h-[2px] bg-brand-gold/60 mx-auto mt-6" />
+            <p className="text-[11px] md:text-xs text-slate-500 font-normal">
+              일어나라 빛을 발하라 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라
+            </p>
+            <p className="text-[10px] text-brand-gold-dark font-extrabold">Isaiah 60:1</p>
+          </div>
+
+          {/* Direct CTA Button inside Hero card */}
+          <div className="pt-2 font-sans">
+            <motion.button
+              onClick={onSignUpClick}
+              className="px-8 py-3.5 bg-brand-navy-deep text-brand-cream-light font-bold text-sm tracking-widest rounded-full shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto cursor-pointer border border-brand-gold/20"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span>예배 신청하기</span>
+              <ChevronRight className="w-4 h-4" />
+            </motion.button>
           </div>
         </motion.div>
       </motion.div>
