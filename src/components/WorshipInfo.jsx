@@ -180,12 +180,13 @@ export default function WorshipInfo({ onSignUpClick }) {
         <div className="border-t border-b border-brand-gold-dark/20 py-14 text-center space-y-8 max-w-4xl mx-auto">
           <div className="space-y-6">
             <p className="font-sans text-lg md:text-2xl lg:text-3xl italic font-normal tracking-wide text-brand-gold-dark leading-relaxed px-4">
-              <br>“Ask, and it will be given to you;</br> seek, and you will find; knock, and it will be opened to you.”
+              “Ask, and it will be given to you;<br />seek, and you will find; knock, and it will be opened to you.”
             </p>
             <div className="space-y-1 font-sans">
               <p className="text-sm md:text-base text-slate-700">
-                <br>구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 </br> 문을 두드리라 그러면 너희에게 열릴 것이니              </p>
-              <p className="text-xs tracking-widest text-brand-gold-dark font-bold">Isaiah 60:1 (이사야 60:1)</p>
+                구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요<br />문을 두드리라 그러면 너희에게 열릴 것이니
+              </p>
+              <p className="text-xs tracking-widest text-brand-gold-dark font-bold">Matthew 7:7 (마태복음 7:7)</p>
             </div>
           </div>
 

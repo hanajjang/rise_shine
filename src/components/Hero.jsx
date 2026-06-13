@@ -94,10 +94,10 @@ export default function Hero({ onSignUpClick }) {
           {/* Scripture Callout (Matthew 7:7) */}
           <div className="border-t border-slate-300/40 pt-6 space-y-2 select-none font-sans">
             <p className="text-xs md:text-sm italic font-medium text-slate-600 leading-relaxed max-w-md mx-auto">
-              <br>“Ask, and it will be given to you;</br> seek, and you will find; knock, and it will be opened to you.”
+              “Ask, and it will be given to you;<br />seek, and you will find; knock, and it will be opened to you.”
             </p>
             <p className="text-[11px] md:text-xs text-slate-500 font-normal">
-              <br>구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 </br> 문을 두드리라 그러면 너희에게 열릴 것이니
+              구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요<br />문을 두드리라 그러면 너희에게 열릴 것이니
             </p>
             <p className="text-[10px] text-brand-gold-dark font-extrabold">Matthew 7:7</p>
           </div>
