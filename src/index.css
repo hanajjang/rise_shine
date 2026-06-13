@@ -67,7 +67,7 @@ body::before {
   height: 100%;
   z-index: 30;
   pointer-events: none;
-  background-image: url('/rise_shine/사진/종이.png');
+  background-image: url('/rise_shine/사진/paper_texture.png');
   background-repeat: repeat;
   opacity: 0.055; /* Subtle paper texture */
 }
