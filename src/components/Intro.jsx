@@ -12,6 +12,12 @@ export default function Intro({ onSignUpClick }) {
   return (
     <section id="intro" className="py-36 md:py-48 px-6 md:px-12 lg:px-24 bg-[#F5F2EB] text-[#1E293B] relative overflow-visible">
 
+      {/* Background Image: 본당_의자 (Subtle watermark background) */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-[0.06] pointer-events-none mix-blend-multiply"
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}사진/sanctuary_chair_1.jpg')` }}
+      />
+
       {/* 1. Jagged Ripped-Paper SVG Divider (Top) */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[99%] z-25 pointer-events-none">
         <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="relative block w-full h-[45px] text-[#F5F2EB] fill-current">
@@ -24,7 +30,7 @@ export default function Intro({ onSignUpClick }) {
 
       {/* Layout Content wrapper */}
       <motion.div
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center"
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center relative z-10"
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -44,7 +50,7 @@ export default function Intro({ onSignUpClick }) {
             <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/20 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-[#C5A059]/10" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
               <img
-                src="사진/본당_의자.jpg"
+                src={`${import.meta.env.BASE_URL}사진/sanctuary_chair_1.jpg`}
                 alt="Sanctuary chair"
                 className="w-full h-full object-cover object-center"
               />
@@ -64,7 +70,7 @@ export default function Intro({ onSignUpClick }) {
             <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[6deg] border-l border-r border-slate-300/20" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
               <img
-                src="사진/본당_조각상.jpg"
+                src={`${import.meta.env.BASE_URL}사진/sanctuary_sculpture_1.jpg`}
                 alt="Sanctuary sculpture"
                 className="w-full h-full object-cover object-center"
               />
@@ -84,7 +90,7 @@ export default function Intro({ onSignUpClick }) {
             <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/15 backdrop-blur-[1px] rotate-[4deg]" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
               <img
-                src="사진/본당_의자(1).jpg"
+                src={`${import.meta.env.BASE_URL}사진/sanctuary_chair_2.jpg`}
                 alt="Sanctuary chair detail"
                 className="w-full h-full object-cover object-center"
               />
@@ -104,7 +110,7 @@ export default function Intro({ onSignUpClick }) {
             <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-slate-300/20" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
               <img
-                src="사진/본당_조각상(2).jpg"
+                src={`${import.meta.env.BASE_URL}사진/sanctuary_sculpture_2.jpg`}
                 alt="Sanctuary sculpture detail"
                 className="w-full h-full object-cover object-center"
               />

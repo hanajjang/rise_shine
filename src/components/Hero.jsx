@@ -40,10 +40,10 @@ export default function Hero({ onSignUpClick }) {
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1200 }}
     >
-      {/* Background Image: '본당_천장.jpg' */}
+      {/* Background Image: 'sanctuary_ceiling.jpg' */}
       <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('사진/본당_천장.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}사진/sanctuary_ceiling.jpg')` }}
         initial={{ scale: 1.12 }}
         animate={{ scale: 1.0 }}
         transition={{ duration: 15, ease: "easeOut" }}
