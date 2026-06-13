@@ -34,26 +34,26 @@ export default function Hero({ onSignUpClick }) {
   };
 
   return (
-    <div 
+    <div
       className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-brand-navy-deep cursor-default"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1200 }}
     >
       {/* Background Image: '본당_천장.jpg' */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url('사진/본당_천장.jpg')` }}
         initial={{ scale: 1.12 }}
         animate={{ scale: 1.0 }}
         transition={{ duration: 15, ease: "easeOut" }}
       />
-      
+
       {/* 30% Dark Overlay for contrast to protect typography */}
       <div className="absolute inset-0 z-10 bg-brand-navy-deep/35 bg-gradient-to-b from-transparent via-brand-navy-deep/15 to-brand-navy-deep/70" />
 
       {/* Hero Content (Centered Glassmorphism Card with Mouse Parallax) */}
-      <motion.div 
+      <motion.div
         className="relative z-20 text-center px-4 max-w-2xl w-full"
         style={{
           rotateX: rotateXSpring,
@@ -64,7 +64,7 @@ export default function Hero({ onSignUpClick }) {
         }}
       >
         {/* Bright clear glass card in Gothic typography with expanded info */}
-        <motion.div 
+        <motion.div
           className="backdrop-blur-[12px] bg-white/60 border border-white/45 shadow-2xl p-8 md:p-12 rounded-3xl space-y-6 md:space-y-8"
           style={{ transform: "translateZ(40px)" }}
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
@@ -73,14 +73,14 @@ export default function Hero({ onSignUpClick }) {
         >
           {/* Tag */}
           <span className="text-xs tracking-[0.3em] text-brand-gold-dark font-extrabold uppercase select-none font-sans block">
-            하나님께 스며들다
+            하느님께 나도 모르게 어느새 스며들었다
           </span>
-          
+
           {/* Main Title - Enlarged */}
           <h1 className="font-sans text-5xl md:text-7xl font-black text-brand-navy-deep tracking-tight leading-none filter drop-shadow-sm">
-            Rise and Shine
+            2026 청년 예배
           </h1>
-          
+
           {/* Subtitle */}
           <p className="font-sans text-base md:text-lg font-bold text-slate-700 tracking-wider">
             유럽의 작은 성전에 온 듯한 특별한 청년 예배
@@ -94,10 +94,10 @@ export default function Hero({ onSignUpClick }) {
           {/* Scripture Callout (Matthew 7:7) */}
           <div className="border-t border-slate-300/40 pt-6 space-y-2 select-none font-sans">
             <p className="text-xs md:text-sm italic font-medium text-slate-600 leading-relaxed max-w-md mx-auto">
-              “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.”
+              <br>“Ask, and it will be given to you;</br> seek, and you will find; knock, and it will be opened to you.”
             </p>
             <p className="text-[11px] md:text-xs text-slate-500 font-normal">
-              구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 문을 두드리라 그러면 너희에게 열릴 것이니
+              <br>구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 </br> 문을 두드리라 그러면 너희에게 열릴 것이니
             </p>
             <p className="text-[10px] text-brand-gold-dark font-extrabold">Matthew 7:7</p>
           </div>
@@ -118,7 +118,7 @@ export default function Hero({ onSignUpClick }) {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 z-20 flex flex-col items-center cursor-pointer select-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -129,7 +129,7 @@ export default function Hero({ onSignUpClick }) {
       >
         <span className="text-[10px] tracking-widest text-brand-gold-dark font-bold uppercase mb-2 font-sans">Scroll to discover</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-brand-gold/60 to-transparent relative overflow-hidden">
-          <motion.div 
+          <motion.div
             className="w-full h-1/2 bg-brand-gold absolute top-0 left-0"
             animate={{ y: [0, 48, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

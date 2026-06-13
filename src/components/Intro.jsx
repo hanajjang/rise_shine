@@ -33,9 +33,9 @@ export default function Intro({ onSignUpClick }) {
 
         {/* Left Column: Polaroid Collage - 2x2 Grid on Mobile & Desktop */}
         <div className="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6 w-full max-w-2xl mx-auto py-6 font-sans">
-          
+
           {/* Polaroid 1: 본당_의자 */}
-          <motion.div 
+          <motion.div
             className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
             style={{ rotate: "-3deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
@@ -43,9 +43,9 @@ export default function Intro({ onSignUpClick }) {
           >
             <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/20 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-[#C5A059]/10" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img 
-                src="사진/본당_의자.jpg" 
-                alt="Sanctuary chair" 
+              <img
+                src="사진/본당_의자.jpg"
+                alt="Sanctuary chair"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -55,7 +55,7 @@ export default function Intro({ onSignUpClick }) {
           </motion.div>
 
           {/* Polaroid 2: 본당_조각상 */}
-          <motion.div 
+          <motion.div
             className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
             style={{ rotate: "2deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
@@ -63,9 +63,9 @@ export default function Intro({ onSignUpClick }) {
           >
             <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[6deg] border-l border-r border-slate-300/20" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img 
-                src="사진/본당_조각상.jpg" 
-                alt="Sanctuary sculpture" 
+              <img
+                src="사진/본당_조각상.jpg"
+                alt="Sanctuary sculpture"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -75,7 +75,7 @@ export default function Intro({ onSignUpClick }) {
           </motion.div>
 
           {/* Polaroid 3: 본당_의자(1) */}
-          <motion.div 
+          <motion.div
             className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
             style={{ rotate: "3deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
@@ -83,9 +83,9 @@ export default function Intro({ onSignUpClick }) {
           >
             <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/15 backdrop-blur-[1px] rotate-[4deg]" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img 
-                src="사진/본당_의자(1).jpg" 
-                alt="Sanctuary chair detail" 
+              <img
+                src="사진/본당_의자(1).jpg"
+                alt="Sanctuary chair detail"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -95,7 +95,7 @@ export default function Intro({ onSignUpClick }) {
           </motion.div>
 
           {/* Polaroid 4: 본당_조각상(2) */}
-          <motion.div 
+          <motion.div
             className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
             style={{ rotate: "-2deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
@@ -103,9 +103,9 @@ export default function Intro({ onSignUpClick }) {
           >
             <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-slate-300/20" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img 
-                src="사진/본당_조각상(2).jpg" 
-                alt="Sanctuary sculpture detail" 
+              <img
+                src="사진/본당_조각상(2).jpg"
+                alt="Sanctuary sculpture detail"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -128,10 +128,16 @@ export default function Intro({ onSignUpClick }) {
 
           {/* Story Confessions in conversational Korean */}
           <div className="space-y-6 font-sans text-base md:text-lg leading-relaxed text-slate-700">
-            <p className="text-xl md:text-2xl text-brand-gold-dark font-bold border-l-2 border-brand-gold-dark/40 pl-5 mb-8 leading-relaxed">
-              “유럽의 작은 성전에 온 듯한,<br />
-              환상적인 공간에서 드리는 특별한 청년예배”
-
+            <p className="text-base md:text-lg text-brand-gold-dark font-bold border-l-2 border-brand-gold-dark/40 pl-5 mb-8 leading-relaxed">
+              빛은 형태가 없지만<br />
+              빛이 있기에<br />
+              세상의 아름다운 모습을 눈에 담을 수 있다<br /><br />
+              공기는 보이지 않아도<br />
+              우리를 숨 쉴 수 있게 해주며<br />
+              불어오는 바람을 통해 느낄 수 있다<br /><br />
+              눈에 보이지 않아도<br />
+              하나님이 언제나 어디서나<br />
+              우리 삶에 함께 하시는 것을 느낄 수 있다
             </p>
 
             <div className="space-y-4 font-sans font-light text-slate-600 leading-loose">

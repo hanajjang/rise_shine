@@ -180,13 +180,11 @@ export default function WorshipInfo({ onSignUpClick }) {
         <div className="border-t border-b border-brand-gold-dark/20 py-14 text-center space-y-8 max-w-4xl mx-auto">
           <div className="space-y-6">
             <p className="font-sans text-lg md:text-2xl lg:text-3xl italic font-normal tracking-wide text-brand-gold-dark leading-relaxed px-4">
-              “Arise, shine; for your light has come,<br className="hidden md:inline" />
-              and the glory of the Lord rises upon you.”
+              <br>“Ask, and it will be given to you;</br> seek, and you will find; knock, and it will be opened to you.”
             </p>
             <div className="space-y-1 font-sans">
               <p className="text-sm md:text-base text-slate-700">
-                일어나라 빛을 발하라 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라
-              </p>
+                <br>구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 </br> 문을 두드리라 그러면 너희에게 열릴 것이니              </p>
               <p className="text-xs tracking-widest text-brand-gold-dark font-bold">Isaiah 60:1 (이사야 60:1)</p>
             </div>
           </div>
