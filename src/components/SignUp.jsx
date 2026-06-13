@@ -225,7 +225,7 @@ export default function SignUp({ isOpen, onClose, onSignUpClick }) {
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <label className="text-xs font-bold tracking-wider text-slate-600">
-                          어떤 소그룹 모임에 관심이 있으신가요?
+                          어떤 셀모임에 관심이 있으신가요?
                         </label>
                         <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">Step 3 / 3</span>
                       </div>

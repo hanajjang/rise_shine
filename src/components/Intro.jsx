@@ -4,8 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Intro({ onSignUpClick }) {
   const lines = [
-    "바쁜 일상을 잠시 내려놓고,",
-    "하나님과 함께하는 시간을 가져보세요.",
+    "바쁜 일상을 잠시 내려놓고, 하나님과 함께하는 시간을 가져보세요.",
     "당신을 기다리고 있습니다.",
 
   ];
@@ -32,69 +31,86 @@ export default function Intro({ onSignUpClick }) {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
 
-        {/* Left Column: Polaroid Collage */}
-        <div className="lg:col-span-7 relative flex flex-col sm:flex-row items-center justify-center gap-8 min-h-[480px] py-10">
-
-          {/* Polaroid 1: Wide Shot Altar (본당_전체) */}
-          <motion.div
-            className="bg-white p-4 pb-12 border border-slate-200 shadow-xl max-w-[290px] w-full relative z-10 select-none cursor-grab active:cursor-grabbing"
+        {/* Left Column: Polaroid Collage - 2x2 Grid on Mobile & Desktop */}
+        <div className="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6 w-full max-w-2xl mx-auto py-6 font-sans">
+          
+          {/* Polaroid 1: 본당_의자 */}
+          <motion.div 
+            className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
             style={{ rotate: "-3deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Washi Tape */}
-            <div className="absolute -top-3 left-1/4 w-16 h-5 bg-[#C5A059]/25 backdrop-blur-[1.5px] rotate-[-7deg] border-l border-r border-[#C5A059]/10" />
+            <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/20 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-[#C5A059]/10" />
             <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img
-                src="/사진/KakaoTalk_Photo_2026-06-10-14-56-05 010.jpeg"
-                alt="Sanctuary Sanctuary wide view"
+              <img 
+                src="사진/본당_의자.jpg" 
+                alt="Sanctuary chair" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <p className="text-center font-sans text-xs tracking-widest text-slate-500 font-bold mt-5">
-              cozy chapel view
+            <p className="text-center text-[10px] sm:text-xs tracking-widest text-slate-400 font-bold mt-4 uppercase">
+              Sanctuary Chair
             </p>
           </motion.div>
 
-          {/* Polaroid 2: Medium Stage Close-up (본당 2) */}
-          <motion.div
-            className="bg-white p-4 pb-12 border border-slate-200 shadow-2xl max-w-[250px] w-full relative z-20 sm:-ml-12 sm:-mt-16 select-none cursor-grab active:cursor-grabbing"
-            style={{ rotate: "4deg" }}
+          {/* Polaroid 2: 본당_조각상 */}
+          <motion.div 
+            className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
+            style={{ rotate: "2deg" }}
             whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Washi Tape */}
-            <div className="absolute -top-3 right-1/4 w-14 h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[8deg] border-l border-r border-slate-300/20" />
-            <div className="aspect-[3/4] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img
-                src="/사진/본당(2).jpeg"
-                alt="Chapel Sanctuary altar view"
+            <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[6deg] border-l border-r border-slate-300/20" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
+              <img 
+                src="사진/본당_조각상.jpg" 
+                alt="Sanctuary sculpture" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <p className="text-center font-sans text-xs tracking-widest text-slate-400 font-bold mt-5">
-              warm interior
+            <p className="text-center text-[10px] sm:text-xs tracking-widest text-slate-400 font-bold mt-4 uppercase">
+              Sculpture
             </p>
           </motion.div>
 
-          {/* Polaroid 3: Detail Stage view (본당 1) */}
-          <motion.div
-            className="bg-white p-3 pb-8 border border-slate-200 shadow-lg max-w-[170px] w-full absolute bottom-4 left-6 z-30 hidden xl:block select-none cursor-grab active:cursor-grabbing"
-            style={{ rotate: "-10deg" }}
-            whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 35 }}
+          {/* Polaroid 3: 본당_의자(1) */}
+          <motion.div 
+            className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
+            style={{ rotate: "3deg" }}
+            whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Minimal Tape */}
-            <div className="absolute -top-2 left-1/3 w-10 h-4 bg-[#C5A059]/15 backdrop-blur-[1px] rotate-[-12deg]" />
-            <div className="aspect-square w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img
-                src="/사진/본당(1).jpeg"
-                alt="Sanctuary details"
+            <div className="absolute -top-2.5 right-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-[#C5A059]/15 backdrop-blur-[1px] rotate-[4deg]" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
+              <img 
+                src="사진/본당_의자(1).jpg" 
+                alt="Sanctuary chair detail" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <p className="text-center font-sans text-[10px] tracking-wider text-slate-400 font-semibold mt-3">
-              welcome lights
+            <p className="text-center text-[10px] sm:text-xs tracking-widest text-slate-400 font-bold mt-4 uppercase">
+              Details
+            </p>
+          </motion.div>
+
+          {/* Polaroid 4: 본당_조각상(2) */}
+          <motion.div 
+            className="bg-white p-3 pb-8 sm:p-4 sm:pb-12 border border-slate-200 shadow-xl relative select-none cursor-grab active:cursor-grabbing rounded-sm"
+            style={{ rotate: "-2deg" }}
+            whileHover={{ scale: 1.05, rotate: "0deg", zIndex: 30 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="absolute -top-2.5 left-1/4 w-12 h-4 sm:w-16 sm:h-5 bg-white/50 backdrop-blur-[1.5px] rotate-[-5deg] border-l border-r border-slate-300/20" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 rounded-sm">
+              <img 
+                src="사진/본당_조각상(2).jpg" 
+                alt="Sanctuary sculpture detail" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <p className="text-center text-[10px] sm:text-xs tracking-widest text-slate-400 font-bold mt-4 uppercase">
+              Sculpture Detail
             </p>
           </motion.div>
         </div>
@@ -105,9 +121,6 @@ export default function Intro({ onSignUpClick }) {
           {/* Editorial Label */}
           <div className="space-y-3 relative">
             <div className="w-12 h-[2px] bg-brand-gold-dark mb-4" />
-            <span className="text-[10px] tracking-[0.25em] text-brand-gold-dark font-extrabold uppercase block select-none font-sans">
-              Editorial Memoir
-            </span>
             <h2 className="font-sans text-3xl md:text-5xl font-extrabold text-brand-navy-deep leading-tight tracking-tight">
               이끌림,<br />설레는 발걸음
             </h2>

@@ -43,39 +43,36 @@ export default function WorshipInfo({ onSignUpClick }) {
 
   return (
     <section id="info" className="py-28 md:py-40 px-6 md:px-12 lg:px-24 bg-[#F9F7F2] text-brand-navy-deep relative overflow-hidden">
-      
+
       {/* Background Watermark Cross (soft gold tint, very faint) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0 overflow-hidden">
         <svg width="600" height="800" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-gold">
-          <path d="M45 10H55V90H45V10Z" fill="currentColor"/>
-          <path d="M20 35H80V45H20V35Z" fill="currentColor"/>
+          <path d="M45 10H55V90H45V10Z" fill="currentColor" />
+          <path d="M20 35H80V45H20V35Z" fill="currentColor" />
         </svg>
       </div>
 
       {/* Viewport scroll animation container */}
-      <motion.div 
+      <motion.div
         className="max-w-6xl mx-auto relative z-10 space-y-20 md:space-y-24"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.0, ease: "easeOut" }}
       >
-        
+
         {/* Header */}
         <div className="text-center space-y-4">
           <span className="text-xs tracking-widest text-brand-gold-dark font-bold uppercase font-sans">Worship Flow</span>
           <h2 className="font-sans text-3xl md:text-5xl font-extrabold text-brand-navy-deep">
-            예배 정보 및 순서
+            예배 순서
           </h2>
-          <p className="text-sm md:text-base text-slate-600 max-w-xl mx-auto font-sans">
-            처음 오시는 분들도 누구나 편안하게 참여할 수 있는 순서입니다.
-          </p>
         </div>
 
         {/* 1. Grid Cards (Info) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {infoCards.map((card, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               className="backdrop-blur-[12px] bg-white/60 border border-white/45 shadow-xl p-8 rounded-2xl flex items-center space-x-6 transition-all duration-300"
               whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.85)", borderColor: "rgba(255, 255, 255, 0.6)" }}
@@ -111,12 +108,11 @@ export default function WorshipInfo({ onSignUpClick }) {
                   key={idx}
                   layout
                   onClick={() => setExpandedStep(isExpanded ? null : idx)}
-                  className={`relative backdrop-blur-[12px] bg-white/60 border border-white/45 p-8 rounded-2xl cursor-pointer overflow-hidden select-none transition-all duration-500 shadow-md flex flex-col items-center ${
-                    isExpanded 
-                      ? 'border-brand-gold bg-white/85 shadow-lg shadow-brand-gold/5' 
-                      : ''
-                  }`}
-                  whileHover={{ 
+                  className={`relative backdrop-blur-[12px] bg-white/60 border border-white/45 p-8 rounded-2xl cursor-pointer overflow-hidden select-none transition-all duration-500 shadow-md flex flex-col items-center ${isExpanded
+                    ? 'border-brand-gold bg-white/85 shadow-lg shadow-brand-gold/5'
+                    : ''
+                    }`}
+                  whileHover={{
                     scale: 1.02,
                     backgroundColor: "rgba(255, 255, 255, 0.85)",
                     borderColor: "rgba(255, 255, 255, 0.6)",
@@ -125,17 +121,17 @@ export default function WorshipInfo({ onSignUpClick }) {
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   <div className="relative z-10 flex flex-col items-center text-center w-full space-y-4">
                     {/* Rotating Icon Container */}
-                    <motion.div 
+                    <motion.div
                       className="p-4 rounded-full bg-brand-gold/10 text-brand-gold-dark border border-brand-gold/25"
                       animate={{ rotate: isExpanded ? 360 : 0 }}
                       transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                       {step.icon}
                     </motion.div>
-                    
+
                     <div className="w-full">
                       <h4 className="font-sans text-lg font-bold text-brand-navy-deep flex items-center justify-center gap-2">
                         <span>{step.title}</span>

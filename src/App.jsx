@@ -15,7 +15,7 @@ function App() {
       <header className="fixed top-0 left-0 w-full z-40 bg-[#F9F7F2]/80 backdrop-blur-md py-4 md:py-6 px-4 md:px-12 flex justify-between items-center border-b border-brand-gold-dark/10 shadow-sm font-sans">
         <div className="flex items-center space-x-2 md:space-x-3">
           <span className="text-base md:text-xl font-bold tracking-widest text-brand-gold-dark uppercase">
-            Rise & Shine
+            청년예배
           </span>
           <span className="hidden md:inline-block w-[1px] h-4 bg-slate-300" />
           <span className="hidden md:inline-block text-xs font-semibold tracking-widest text-[#1E293B]/60">
@@ -64,7 +64,7 @@ function App() {
       <footer className="bg-[#F2EFE9] border-t border-brand-gold-dark/15 py-14 px-6 text-center text-xs tracking-wider text-slate-500 space-y-3 font-sans">
         <p className="text-brand-gold-dark font-semibold">Rise and Shine: 이끌림</p>
         <p>© 2026 Hana Church Youth Community. All Rights Reserved.</p>
-        <p className="text-[10px] text-slate-400 font-sans">“Arise, shine; for your light has come.” Isaiah 60:1</p>
+        <p className="text-[10px] text-slate-400 font-sans">“Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.” Matthew 7:7</p>
       </footer>
     </div>
   );

@@ -40,10 +40,10 @@ export default function Hero({ onSignUpClick }) {
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1200 }}
     >
-      {/* Background Image: '본당_전체.jpeg' */}
+      {/* Background Image: '본당_천장.jpg' */}
       <motion.div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/사진/본당_전체.jpeg')` }}
+        style={{ backgroundImage: `url('사진/본당_천장.jpg')` }}
         initial={{ scale: 1.12 }}
         animate={{ scale: 1.0 }}
         transition={{ duration: 15, ease: "easeOut" }}
@@ -73,7 +73,7 @@ export default function Hero({ onSignUpClick }) {
         >
           {/* Tag */}
           <span className="text-xs tracking-[0.3em] text-brand-gold-dark font-extrabold uppercase select-none font-sans block">
-            Hana Youth Festival
+            하나님께 스며들다
           </span>
           
           {/* Main Title - Enlarged */}
@@ -83,7 +83,7 @@ export default function Hero({ onSignUpClick }) {
           
           {/* Subtitle */}
           <p className="font-sans text-base md:text-lg font-bold text-slate-700 tracking-wider">
-            이끌림, 함께 시작하는 예배
+            유럽의 작은 성전에 온 듯한 특별한 청년 예배
           </p>
 
           {/* 6월 28일 주일 오후 2시 Key Info Highlighted */}
@@ -91,15 +91,15 @@ export default function Hero({ onSignUpClick }) {
             일시: 6월 28일 주일 오후 2시
           </div>
 
-          {/* Scripture Callout (Isaiah 60:1) */}
+          {/* Scripture Callout (Matthew 7:7) */}
           <div className="border-t border-slate-300/40 pt-6 space-y-2 select-none font-sans">
             <p className="text-xs md:text-sm italic font-medium text-slate-600 leading-relaxed max-w-md mx-auto">
-              “Arise, shine; for your light has come, and the glory of the Lord rises upon you.”
+              “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.”
             </p>
             <p className="text-[11px] md:text-xs text-slate-500 font-normal">
-              일어나라 빛을 발하라 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라
+              구하라 그러면 너희에게 주실 것이요 찾으라 그러면 찾을 것이요 문을 두드리라 그러면 너희에게 열릴 것이니
             </p>
-            <p className="text-[10px] text-brand-gold-dark font-extrabold">Isaiah 60:1</p>
+            <p className="text-[10px] text-brand-gold-dark font-extrabold">Matthew 7:7</p>
           </div>
 
           {/* Direct CTA Button inside Hero card */}
